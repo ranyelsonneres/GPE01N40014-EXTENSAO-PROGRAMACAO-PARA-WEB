@@ -36,6 +36,21 @@ tipoCombustivel.addEventListener("change", atualizarValor);
 
 //calcular o abastecimento
 function calcularValorAbastecimento(precoCombustivel, litros){
-    let valorTotal = precoCombustivel* litros;
-    document.getElementById("resultado").innerHTML = valorTotal;
+    if(litros<=0){
+         document.getElementById("resultado").innerHTML = "Insira um valor válido";
+    } else {
+        let valorTotal = precoCombustivel* litros;
+        document.getElementById("resultado").innerHTML = valorTotal;
+    }
 }
+
+let litros = document.getElementById("litros");
+litros.addEventListener("input", atualizarValor);
+
+litros.addEventListener("keydown", function(event){
+    if (event.key == "Enter"){
+        event.preventDefault();
+        atualizarValor;
+    }
+})
+
