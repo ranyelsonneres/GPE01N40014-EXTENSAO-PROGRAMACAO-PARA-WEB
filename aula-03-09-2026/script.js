@@ -40,9 +40,11 @@ function calcularValorAbastecimento(precoCombustivel, litros){
          document.getElementById("resultado").innerHTML = "Insira um valor válido";
     } else {
         let valorTotal = precoCombustivel* litros;
-        document.getElementById("resultado").innerHTML = valorTotal;
+        document.getElementById("resultado").innerHTML = `R$: ${valorTotal.toLocaleString("pt-br", {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
     }
 }
+
+//formatar em casas decimais o valor: R$ 340,00
 
 let litros = document.getElementById("litros");
 litros.addEventListener("input", atualizarValor);
