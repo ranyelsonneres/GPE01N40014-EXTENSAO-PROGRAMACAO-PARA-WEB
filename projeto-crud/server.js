@@ -19,6 +19,10 @@ app.get('/', (req, res) =>{
     //res.send("Teste");
 });
 
+//link com os arquivos de rotas
+const apiRoutes = require('./routes/api');
+app.use('/api/users', apiRoutes);
+
 app.listen(port, ()=>{
     console.log("backend funcionando");
 });
