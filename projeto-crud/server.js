@@ -20,6 +20,7 @@ app.get('/', (req, res) =>{
 });
 
 //link com os arquivos de rotas
+app.use(express.json()); //interpretar o json
 const apiRoutes = require('./routes/api');
 app.use('/api/users', apiRoutes);
 
